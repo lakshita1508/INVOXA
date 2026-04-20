@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gradient-light: linear-gradient(135deg, #e6f0fa 0%, #b8d9ff 50%, #93c5fd 100%);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.light-bg {
+  background: var(--gradient-light);
+  min-height: 100vh;
+}
+
+.dark-bg {
+  background: #0f172a;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+.dark ::-webkit-scrollbar-thumb { background: #334155; }
+
+/* Custom checkbox */
+input[type="checkbox"] { accent-color: #2563eb; }
+
+/* Card glass morphism for light */
+.glass-card {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass-card {
+  background: #1e293b;
+  backdrop-filter: none;
+}
+
+/* Sidebar glass */
+.sidebar-glass {
+  background: rgba(255,255,255,0.90);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.dark .sidebar-glass {
+  background: #1e293b;
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.dark .shimmer {
+  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+  background-size: 200% 100%;
+}
+
+/* Status badges */
+.badge-paid    { @apply bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-400; }
+.badge-unpaid  { @apply bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400; }
+.badge-overdue { @apply bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-400; }
+
+/* Table hover */
+.table-row-hover:hover {
+  background: rgba(37,99,235,0.04);
+}
+.dark .table-row-hover:hover {
+  background: rgba(37,99,235,0.08);
+}
+
+/* Modal backdrop blur */
+.modal-backdrop {
+  background: rgba(15,23,42,0.5);
+  backdrop-filter: blur(4px);
+}
+
+/* Input focus ring */
+.input-field {
+  @apply w-full rounded-lg border border-slate-200 bg-white/70 px-3 py-2.5 text-sm text-slate-800 outline-none transition-all duration-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20;
+}
+
+.dark .input-field {
+  @apply border-slate-600 bg-slate-700/60 text-slate-100 placeholder:text-slate-400 focus:border-brand-400 focus:ring-brand-400/20;
+}
+
+/* Number font */
+.num { font-family: 'JetBrains Mono', monospace; }

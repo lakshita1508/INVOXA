@@ -1,0 +1,60 @@
+# =========================
+# Python (Flask backend)
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Environment variables
+.env
+
+# Flask stuff
+instance/
+.webassets-cache
+
+# =========================
+# Database
+# =========================
+database.db
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Node / Frontend (Vite)
+# =========================
+node_modules/
+dist/
+build/
+
+# Vite cache
+.vite/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+
+# =========================
+# Optional: Ignore fonts?
+# =========================
+# If you want to track fonts, COMMENT this out
+# *.ttf
